@@ -1,0 +1,119 @@
+/* === Google Fonts === */
+/* Add these <link> tags inside your index.html <head> (not here in CSS):
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+*/
+
+/* === Font variables === */
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-serif: 'Arvo', Georgia, serif;
+  --ring: 0 0% 0%;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* === Tailwind layers === */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply Arvo automatically to headings & section titles */
+h1, h2, h3, .h2, .eyebrow {
+  font-family: var(--font-serif);
+}
+
+/* Layout */
+html, body, #root { height: 100%; }
+
+/* Buttons */
+.btn { @apply inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium transition; }
+.btn-primary { @apply bg-brand-500 text-white shadow hover:bg-brand-600; }
+.btn-ghost   { @apply bg-transparent hover:bg-brand-50; }
+.btn-outline { @apply border border-zinc-200 text-zinc-800 hover:border-zinc-300; }
+
+/* Cards, chips, sections */
+.card { @apply rounded-2xl border border-zinc-200 bg-white shadow-sm hover:shadow-md transition h-full; }
+.chip { @apply inline-flex items-center rounded-full border border-zinc-200 px-2.5 py-1 text-xs text-zinc-700; }
+.section { @apply mx-auto max-w-6xl px-6 md:px-8; }
+.h2 { @apply text-2xl md:text-3xl font-semibold tracking-tight; }
+.eyebrow { @apply text-xs uppercase tracking-widest text-zinc-500; }
+
+/* Dark mode adjustments */
+html.dark body { @apply bg-zinc-900; }
+html.dark .card { @apply border-zinc-800 bg-zinc-900; }
+html.dark .btn-outline { @apply border-zinc-700 text-zinc-100 hover:border-zinc-600; }
+html.dark .btn-ghost { @apply text-zinc-100 hover:bg-zinc-800; }
+html.dark .chip { @apply border-zinc-700 text-zinc-200; }
+html.dark .eyebrow { @apply text-zinc-400; }
+
+/* ===== Research: textured paper cards (final) ===== */
+@layer utilities {
+  /* base card */
+  .paper-card {
+    /* square edges + paper tone + dark text */
+    @apply h-[420px] w-[280px];
+    @apply relative border border-zinc-200 shadow-sm p-5 md:p-6;
+    background-color: #f9f6f2;
+    background-image: url('/src/assets/paper.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    color: rgb(39 39 42); /* zinc-800 */
+  }
+
+  /* force dark text inside, regardless of theme/utilities */
+  .paper-card :where(p, li, a, small, span) {
+    color: rgb(39 39 42); /* zinc-800 */
+  }
+  .paper-card :where(h1,h2,h3,h4) {
+    color: rgb(24 24 27); /* zinc-900 */
+    font-family: var(--font-serif);
+  }
+
+  /* dark mode: keep the same ink-on-paper colors */
+  html.dark .paper-card {
+    color: rgb(39 39 42); /* still dark text */
+  }
+  html.dark .paper-card :where(p, li, a, small, span) {
+    color: rgb(39 39 42);
+  }
+  html.dark .paper-card :where(h1,h2,h3,h4) {
+    color: rgb(24 24 27);
+  }
+
+  /* compact academic badges */
+  .badge {
+    @apply inline-flex items-center rounded-full border border-zinc-200 px-2 py-0.5 text-[11px];
+    color: rgb(39 39 42);
+    background: rgba(255,255,255,0.6);
+  }
+
+  /* layered “sheet” effect (square edges) */
+  .paper-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    transform: translateY(6px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .paper-card::after {
+    content: "";
+    position: absolute;
+    left: 8px; right: 8px; top: 6px; height: 10px;
+    border-radius: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.75), transparent);
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+  html.dark .paper-card::after {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.35), transparent);
+  }
+}
+
