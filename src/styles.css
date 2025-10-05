@@ -54,7 +54,7 @@ html.dark .eyebrow { @apply text-zinc-400; }
 
 @media (max-width: 640px) {
   .paper-card {
-    padding: 1rem;
+    transform: scale(0.95);
     margin-bottom: 1rem;
   }
 }

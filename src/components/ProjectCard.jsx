@@ -2,7 +2,7 @@ export default function ProjectCard({ title, blurb, tags = [], links = {}, img }
   return (
     <article className="card p-5 md:p-6">
       {/* === Project Thumbnail Section === */}
-            <a
+      <a
         href={links.live || links.demo || links.repo || '#'}
         target="_blank"
         rel="noreferrer"
