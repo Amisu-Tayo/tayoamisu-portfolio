@@ -33,7 +33,7 @@ const PROJECTS = [
     blurb:
       'A visual exploration of pathfinding algorithms, demonstrating how heuristics like A* discover efficient routes through dynamic environments.',
     tags: ['Algorithms','Heuristics','Pathfinding'],
-    img: '/assets/maze-pathfinding.png',
+    img: '/src/assets/maze-pathfinding.png',
     links: { 
       repo: 'https://github.com/Amisu-Tayo/maze-pathfinder',
       Overview: '#' 
