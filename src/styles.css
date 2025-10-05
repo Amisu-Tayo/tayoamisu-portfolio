@@ -50,6 +50,16 @@ html.dark .btn-ghost { @apply text-zinc-100 hover:bg-zinc-800; }
 html.dark .chip { @apply border-zinc-700 text-zinc-200; }
 html.dark .eyebrow { @apply text-zinc-400; }
 
+/* ===== small device sizing===== */
+
+@media (max-width: 640px) {
+  .paper-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+
 /* ===== Research: textured paper cards (final) ===== */
 @layer utilities {
   /* base card */

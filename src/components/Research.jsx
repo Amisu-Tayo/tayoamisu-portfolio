@@ -44,10 +44,10 @@ function Paper({ title, summary, venue, year, status, tags = [], links = {} }) {
 
 // ★ portrait-sized cards; 3 per row on large screens
 const GRID_CLASSES =
-  "mt-6 grid gap-5 md:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+  "mt-6 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center";
 
 const CARD_SIZE =
-  "aspect-[3/4] max-w-[280px] mx-auto"; // upright feel without relying on aspect plugin
+  "w-full max-w-[320px] mx-auto"; 
 
 const PAPERS = [
   {
