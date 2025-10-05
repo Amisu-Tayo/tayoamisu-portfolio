@@ -3,7 +3,6 @@
 function Paper({ title, summary, venue, year, status, tags = [], links = {} }) {
   return (
     <article className="paper-card flex flex-col">
-      {/* status pill */}
       {status && (
         <div className="self-end -mt-1 mb-1 text-[11px] px-2 py-0.5 rounded-full bg-brand-500 text-white">
           {status}
@@ -28,7 +27,6 @@ function Paper({ title, summary, venue, year, status, tags = [], links = {} }) {
         </div>
       )}
 
-      {/* inline actions; wrap on small screens */}
       {Object.keys(links).length > 0 && (
         <div className="mt-4 text-sm flex flex-wrap gap-x-4 gap-y-2">
           {links.pdf && <a href={links.pdf} target="_blank" rel="noreferrer" className="underline hover:text-brand-600">PDF</a>}
@@ -42,12 +40,13 @@ function Paper({ title, summary, venue, year, status, tags = [], links = {} }) {
   );
 }
 
-// 1->2->3 columns; start items at top and center horizontally
 const GRID_CLASSES =
-  "mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 items-start justify-items-center";
+  // start items at top; let tracks stretch; control width with wrapper
+  "mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start justify-items-stretch";
 
-// center the card within its grid cell without forcing full height
-const CARD_SIZE = "w-full flex justify-center";
+const CARD_WRAPPER =
+  // prevent overflow on phones; center within track
+  "w-full max-w-md sm:max-w-none mx-auto";
 
 const PAPERS = [
   {
@@ -58,11 +57,7 @@ const PAPERS = [
     year: '2026',
     status: 'WIP',
     tags: ['GraphRAG','Knowledge Graphs','LLM Reasoning','Retrieval'],
-    links: { 
-      pdf: '/GraphRAG.pdf', 
-      overview: '#', 
-      notebook: '#' 
-    }
+    links: { pdf: '/GraphRAG.pdf', overview: '#', notebook: '#' }
   },
   {
     title: 'Evaluating the Reliability of Transformer Models for Human–AI Text Classification',
@@ -72,11 +67,7 @@ const PAPERS = [
     year: '2025',
     status: 'WIP',
     tags: ['Transformers','Detection','Explainability','Evaluation', 'Bias'],
-    links: { 
-      pdf: '/AI-vs-AI.pdf', 
-      overview: '#', 
-      notebook: '#' 
-    }
+    links: { pdf: '/AI-vs-AI.pdf', overview: '#', notebook: '#' }
   },
   {
     title: 'Comparative Analysis of ML Techniques for Graph-Based Classification',
@@ -86,11 +77,7 @@ const PAPERS = [
     year: '2025',
     status: 'Paper',
     tags: ['Graph ML','Explainability','Network Analysis'],
-    links: { 
-      pdf: '/GraphClass.pdf', 
-      overview: '#', 
-      notebook: 'https://colab.research.google.com/drive/1mC8IjbfGm-5XTez96WHH37R367Or9qmx' 
-    }
+    links: { pdf: '/GraphClass.pdf', overview: '#', notebook: 'https://colab.research.google.com/drive/1mC8IjbfGm-5XTez96WHH37R367Or9qmx' }
   },
   {
     title: 'Classifying Emotion, Genre, and Authorship from Lyrics',
@@ -100,11 +87,7 @@ const PAPERS = [
     year: '2025',
     status: 'WIP',
     tags: ['Transformer Embeddings','Stylometry','Emotion Classification', 'Multilabel'],
-    links: { 
-      pdf: '#', 
-      overview: '#', 
-      notebook: '#' 
-    }
+    links: { pdf: '#', overview: '#', notebook: '#' }
   },
   {
     title: 'Evaluation of Classical and Ensemble ML Algorithms for Thyroid Cancer Diagnosis',
@@ -114,11 +97,7 @@ const PAPERS = [
     year: '2025',
     status: 'Paper',
     tags: ['Healthcare ML','Interpretability','Ensembles','Model Evaluation'],
-    links: { 
-      pdf: '/ThyroidCancerML.pdf', 
-      overview: '#',
-      notebook: '#' 
-    }
+    links: { pdf: '/ThyroidCancerML.pdf', overview: '#', notebook: '#' }
   },
   {
     title: 'Analysis of Towson University\'s Performance & Rankings',
@@ -128,17 +107,13 @@ const PAPERS = [
     year: '2025',
     status: 'Finalist',
     tags: ['Data Engineering','Analytics','Dashboards','ETL', 'Feature Engineering'],
-    links: { 
-      pdf: '/TuAnalyticsSummary.pdf', 
-      overview: '/TuAnalyticsViz.pdf', 
-      notebook: 'https://colab.research.google.com/drive/1NyYftylwOWXO_IAbDkflImh2c8cw3JIC?ths=true&usp=docs_home#scrollTo=NK3Obws66L1N' 
-    }
+    links: { pdf: '/TuAnalyticsSummary.pdf', overview: '/TuAnalyticsViz.pdf', notebook: 'https://colab.research.google.com/drive/1NyYftylwOWXO_IAbDkflImh2c8cw3JIC?ths=true&usp=docs_home#scrollTo=NK3Obws66L1N' }
   },
 ];
 
 export default function Research() {
   return (
-    <section id="research" className="section py-16 md:py-24">
+    <section id="research" className="section py-16 md:py-24 overflow-x-hidden">
       <div className="eyebrow">RESEARCH</div>
       <h2 className="h2 mt-1">Papers & Studies</h2>
       <p className="mt-2 text-zinc-600 dark:text-zinc-300 max-w-prose">
@@ -147,7 +122,7 @@ export default function Research() {
 
       <div className={GRID_CLASSES}>
         {PAPERS.map(p => (
-          <div key={p.title} className={CARD_SIZE}>
+          <div key={p.title} className={CARD_WRAPPER}>
             <Paper {...p} />
           </div>
         ))}
