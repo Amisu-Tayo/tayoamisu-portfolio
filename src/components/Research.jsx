@@ -44,11 +44,11 @@ function Paper({ title, summary, venue, year, status, tags = [], links = {} }) {
 
 // ★ portrait-sized cards; 3 per row on large screens
 const GRID_CLASSES =
-  "mt-6 grid gap-8 sm:gap-6 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center";
+  "mt-6 grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3 place-items-center";
 
 
 const CARD_SIZE =
-  "w-full max-w-[320px] mx-auto"; 
+  "w-full flex justify-center"; 
 
 const PAPERS = [
   {
@@ -146,8 +146,8 @@ export default function Research() {
 
       <div className={`${GRID_CLASSES}`}>
         {PAPERS.map(p => (
-          <div key={p.title} className={`${CARD_SIZE} sm:scale-95 xs:scale-90`}>
-            <Paper {...p} />
+          <div key={p.title} className={CARD_SIZE}>
+              <Paper {...p} />
           </div>
         ))}
       </div>

@@ -51,30 +51,46 @@ html.dark .chip { @apply border-zinc-700 text-zinc-200; }
 html.dark .eyebrow { @apply text-zinc-400; }
 
 /* ===== small device sizing===== */
-
-@media (max-width: 640px) {
+@media (min-width: 640px) {   /* tablets */
   .paper-card {
-    transform: scale(0.95);
-    margin-bottom: 1rem;
+    max-width: 300px;
+    min-height: 360px;
+  }
+}
+@media (min-width: 1024px) {  /* desktop */
+  .paper-card {
+    max-width: 320px;
+    min-height: 380px;
   }
 }
 
 
+
+
 /* ===== Research: textured paper cards (final) ===== */
 @layer utilities {
-  /* base card */
+  /* base card (mobile first) */
   .paper-card {
-    /* square edges + paper tone + dark text */
-    @apply h-[420px] w-[280px];
-    @apply relative border border-zinc-200 shadow-sm p-5 md:p-6;
-    background-color: #f9f6f2;
-    background-image: url('/src/assets/paper.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 0;
-    color: rgb(39 39 42); /* zinc-800 */
+  @apply relative border border-zinc-200 shadow-sm p-5 md:p-6;
+  @apply text-zinc-800;
+  width: 92vw;           /* fill safely on phones */
+  max-width: 300px;      /* cap so it feels like a sheet */
+  min-height: 340px;     /* tall enough for title+summary+tags */
+  background-color: #f9f6f2;
+  background-image: url('/src/assets/paper.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;
+  color: rgb(39 39 42);
+}
+ /* tablet */
+  @media (min-width: 640px) {
+    .paper-card { max-width: 300px; min-height: 360px; }
   }
-
+  /* desktop */
+  @media (min-width: 1024px) {
+    .paper-card { max-width: 320px; min-height: 380px; }
+  }
   /* force dark text inside, regardless of theme/utilities */
   .paper-card :where(p, li, a, small, span) {
     color: rgb(39 39 42); /* zinc-800 */
@@ -109,9 +125,15 @@ html.dark .eyebrow { @apply text-zinc-400; }
     inset: 0;
     border-radius: 0;
     box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    transform: translateY(4px);
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  @media (min-width: 640px) {
+  .paper-card::before {
     transform: translateY(6px);
     opacity: 0.5;
-    pointer-events: none;
   }
   .paper-card::after {
     content: "";
@@ -127,3 +149,4 @@ html.dark .eyebrow { @apply text-zinc-400; }
   }
 }
 
+}
