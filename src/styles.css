@@ -12,6 +12,7 @@
   --ring: 0 0% 0%;
 }
 
+/* === Base styles === */
 body {
   font-family: var(--font-sans);
 }
@@ -27,88 +28,112 @@ h1, h2, h3, .h2, .eyebrow {
 }
 
 /* Layout */
-html, body, #root { height: 100%; }
+html, body, #root {
+  height: 100%;
+}
 
 /* Buttons */
-.btn { @apply inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium transition; }
-.btn-primary { @apply bg-brand-500 text-white shadow hover:bg-brand-600; }
-.btn-ghost   { @apply bg-transparent hover:bg-brand-50; }
-.btn-outline { @apply border border-zinc-200 text-zinc-800 hover:border-zinc-300; }
+.btn {
+  @apply inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium transition;
+}
+.btn-primary {
+  @apply bg-brand-500 text-white shadow hover:bg-brand-600;
+}
+.btn-ghost {
+  @apply bg-transparent hover:bg-brand-50;
+}
+.btn-outline {
+  @apply border border-zinc-200 text-zinc-800 hover:border-zinc-300;
+}
 
 /* Cards, chips, sections */
-.card { @apply rounded-2xl border border-zinc-200 bg-white shadow-sm hover:shadow-md transition h-full; }
-.chip { @apply inline-flex items-center rounded-full border border-zinc-200 px-2.5 py-1 text-xs text-zinc-700; }
-.section { @apply mx-auto max-w-6xl px-6 md:px-8; }
-.h2 { @apply text-2xl md:text-3xl font-semibold tracking-tight; }
-.eyebrow { @apply text-xs uppercase tracking-widest text-zinc-500; }
-
-/* Dark mode adjustments */
-html.dark body { @apply bg-zinc-900; }
-html.dark .card { @apply border-zinc-800 bg-zinc-900; }
-html.dark .btn-outline { @apply border-zinc-700 text-zinc-100 hover:border-zinc-600; }
-html.dark .btn-ghost { @apply text-zinc-100 hover:bg-zinc-800; }
-html.dark .chip { @apply border-zinc-700 text-zinc-200; }
-html.dark .eyebrow { @apply text-zinc-400; }
-
-/* ===== small device sizing===== */
-@media (min-width: 640px) {   /* tablets */
-  .paper-card {
-    max-width: 300px;
-    min-height: 360px;
-  }
+.card {
+  @apply rounded-2xl border border-zinc-200 bg-white shadow-sm hover:shadow-md transition;
 }
-@media (min-width: 1024px) {  /* desktop */
-  .paper-card {
-    max-width: 320px;
-    min-height: 380px;
-  }
+.chip {
+  @apply inline-flex items-center rounded-full border border-zinc-200 px-2.5 py-1 text-xs text-zinc-700;
+}
+.section {
+  @apply mx-auto max-w-6xl px-6 md:px-8;
+}
+.h2 {
+  @apply text-2xl md:text-3xl font-semibold tracking-tight;
+}
+.eyebrow {
+  @apply text-xs uppercase tracking-widest text-zinc-500;
 }
 
+/* === Dark mode adjustments === */
+html.dark body {
+  @apply bg-zinc-900;
+}
+html.dark .card {
+  @apply border-zinc-800 bg-zinc-900;
+}
+html.dark .btn-outline {
+  @apply border-zinc-700 text-zinc-100 hover:border-zinc-600;
+}
+html.dark .btn-ghost {
+  @apply text-zinc-100 hover:bg-zinc-800;
+}
+html.dark .chip {
+  @apply border-zinc-700 text-zinc-200;
+}
+html.dark .eyebrow {
+  @apply text-zinc-400;
+}
 
+/* === Responsive hero image fix === */
+/* Shorter aspect on mobile */
+.hero-thumbnail {
+  @apply block aspect-[4/3] sm:aspect-[16/10] w-full rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 hover:opacity-90 transition;
+}
 
-
-/* ===== Research: textured paper cards (final) ===== */
+/* === Research: textured paper cards (final) === */
 @layer utilities {
-  /* base card (mobile first) */
   .paper-card {
-  @apply relative border border-zinc-200 shadow-sm p-5 md:p-6;
-  @apply text-zinc-800;
-  width: 92vw;           /* fill safely on phones */
-  max-width: 300px;      /* cap so it feels like a sheet */
-  min-height: 340px;     /* tall enough for title+summary+tags */
-  background-color: #f9f6f2;
-  background-image: url('/src/assets/paper.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 0;
-  color: rgb(39 39 42);
-}
- /* tablet */
-  @media (min-width: 640px) {
-    .paper-card { max-width: 300px; min-height: 360px; }
+    @apply relative border border-zinc-200 shadow-sm p-5 sm:p-6 text-zinc-800;
+    width: 100%;
+    max-width: 100%;
+    min-height: 280px;
+    background-color: #f9f6f2;
+    background-image: url('/src/assets/paper.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    color: rgb(39 39 42);
   }
+
+  /* tablet */
+  @media (min-width: 640px) {
+    .paper-card {
+      max-width: 300px;
+      min-height: 340px;
+    }
+  }
+
   /* desktop */
   @media (min-width: 1024px) {
-    .paper-card { max-width: 320px; min-height: 380px; }
+    .paper-card {
+      max-width: 320px;
+      min-height: 380px;
+    }
   }
-  /* force dark text inside, regardless of theme/utilities */
+
   .paper-card :where(p, li, a, small, span) {
-    color: rgb(39 39 42); /* zinc-800 */
+    color: rgb(39 39 42);
   }
+
   .paper-card :where(h1,h2,h3,h4) {
-    color: rgb(24 24 27); /* zinc-900 */
+    color: rgb(24 24 27);
     font-family: var(--font-serif);
   }
 
-  /* dark mode: keep the same ink-on-paper colors */
-  html.dark .paper-card {
-    color: rgb(39 39 42); /* still dark text */
-  }
-  html.dark .paper-card :where(p, li, a, small, span) {
-    color: rgb(39 39 42);
-  }
+  /* dark mode ink colors */
+  html.dark .paper-card,
+  html.dark .paper-card :where(p, li, a, small, span),
   html.dark .paper-card :where(h1,h2,h3,h4) {
-    color: rgb(24 24 27);
+    color: rgb(39 39 42);
   }
 
   /* compact academic badges */
@@ -118,7 +143,7 @@ html.dark .eyebrow { @apply text-zinc-400; }
     background: rgba(255,255,255,0.6);
   }
 
-  /* layered “sheet” effect (square edges) */
+  /* layered “sheet” effect */
   .paper-card::before {
     content: "";
     position: absolute;
@@ -131,22 +156,26 @@ html.dark .eyebrow { @apply text-zinc-400; }
   }
 
   @media (min-width: 640px) {
-  .paper-card::before {
-    transform: translateY(6px);
-    opacity: 0.5;
-  }
-  .paper-card::after {
-    content: "";
-    position: absolute;
-    left: 8px; right: 8px; top: 6px; height: 10px;
-    border-radius: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.75), transparent);
-    mix-blend-mode: soft-light;
-    pointer-events: none;
-  }
-  html.dark .paper-card::after {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.35), transparent);
-  }
-}
+    .paper-card::before {
+      transform: translateY(6px);
+      opacity: 0.5;
+    }
 
+    .paper-card::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      top: 6px;
+      height: 10px;
+      border-radius: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.75), transparent);
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+    }
+
+    html.dark .paper-card::after {
+      background: linear-gradient(to bottom, rgba(255,255,255,0.35), transparent);
+    }
+  }
 }
