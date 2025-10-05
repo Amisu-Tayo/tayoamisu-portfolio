@@ -1,4 +1,10 @@
 // src/components/FeaturedProjects.jsx
+import fimsImg from '../assets/FIMS.png';
+import rwpImg from '../assets/ranking-with-purpose.png';
+import mazeImg from '../assets/maze-pathfinding.png';
+import malloyImg from '../assets/malloy.png';
+import wumpusImg from '../assets/wumpus-world.png';
+import lyricsImg from '../assets/lyrical-intelligence.png';
 import ProjectCard from './ProjectCard'
 
 const PROJECTS = [
@@ -8,7 +14,7 @@ const PROJECTS = [
     blurb:
       'An exploratory analytics project comparing institutional performance through transparent, multi-metric ranking models.',
     tags: ['Analytics','Visualization','Python','Pandas','ML'],
-    img: '/src/assets/ranking-with-purpose.png',
+    img: rwpImg,
     links: { 
       live: 'https://ranking-with-purpose.streamlit.app/',
        repo: 'https://github.com/Amisu-Tayo/Ranking-With-Purpose', 
@@ -20,7 +26,7 @@ const PROJECTS = [
     blurb:
       'A lightweight planning tool for small retailers that turns sales data into simple forecasts.',
     tags: ['Python','Flask','AWS', 'Forecasting','MySQL'],
-    img: '/src/assets/FIMS.png',
+    img: fimsImg,
     links: { 
       live: 'https://fims.store/', 
       repo: 'https://github.com/Amisu-Tayo/SWE-CodeCrafters' 
@@ -33,7 +39,7 @@ const PROJECTS = [
     blurb:
       'A visual exploration of pathfinding algorithms, demonstrating how heuristics like A* discover efficient routes through dynamic environments.',
     tags: ['Algorithms','Heuristics','Pathfinding'],
-    img: '/src/assets/maze-pathfinding.png',
+    img: mazeImg,
     links: { 
       repo: 'https://github.com/Amisu-Tayo/maze-pathfinder',
       Overview: '#' 
@@ -45,7 +51,7 @@ const PROJECTS = [
     blurb:
       'A lightweight malloc-style memory allocator with a pooled memory model, free-list management, fragmentation tests, and mmap-based expansion.',
     tags: ['C','OperatingSystems','mmap','Allocator'],
-    img: '/src/assets/malloy.png',
+    img: malloyImg,
     links: { 
       repo: 'https://github.com/Amisu-Tayo/Custom-Memory-Allocator-Malloy-', 
       Overview: '#' }
@@ -56,7 +62,7 @@ const PROJECTS = [
     blurb:
       'An intelligent agent for Wumpus World that combines rule-based reasoning, probability, and search algorithms to safely retrieve gold and escape the cave.',
     tags: ['AI','logic','Search'],
-    img: '/src/assets/wumpus-world.png',
+    img: wumpusImg,
     links: { 
       repo: 'https://github.com/Amisu-Tayo/Wumpus-World-Agent',
       Oveerview: '#' 
@@ -68,7 +74,7 @@ const PROJECTS = [
     blurb:
       'An NLP study of song lyrics using transformer embeddings to classify emotional tone, genre, and artist style. Explores linguistic features and representation learning through models like BERT and stylometric analysis.',
     tags: ['NLP','Transformers','BERT','Stylometry','Classification','WIP'],
-    img: '/src/assets/lyrical-intelligence.png',
+    img: lyricsImg,
     links: { 
       notebook: '#', 
       repo: '#',
