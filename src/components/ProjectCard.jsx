@@ -8,12 +8,11 @@ export default function ProjectCard({ title, blurb, tags = [], links = {}, img }
         rel="noreferrer"
         className="block aspect-[16/10] w-full rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 hover:opacity-90 transition"
       >
-        {img && (
-          <a href={links?.live || links?.demo || links?.repo || '#'} target="_blank" rel="noreferrer">
+        {img ? (
           <img
             src={img}
             alt={`${title} preview`}
-            className="w-full h-full object-center"
+            className="w-full h-full object-cover object-center"
           />
         ) : (
           <div className="grid place-items-center text-zinc-500 dark:text-zinc-400 text-sm">
@@ -48,5 +47,5 @@ export default function ProjectCard({ title, blurb, tags = [], links = {}, img }
         ))}
       </div>
     </article>
-  )
+  );
 }
