@@ -26,7 +26,7 @@ export default function Hero() {
           </div>
 
           {/* Skills Marquee (chips) */}
-          <div className="mt-6">
+          <div className="mt-6 overflow-hidden">
             <SkillsMarquee />
           </div>
         </div>

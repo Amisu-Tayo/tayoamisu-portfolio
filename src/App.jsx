@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col text-zinc-900 dark:text-zinc-50">
       <Navbar />
-      <main className="flex-1 overflow-x-hidden">
+      <main className="flex-1">
         <Hero />
         <FeaturedProjects />
         <Research />
