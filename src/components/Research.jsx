@@ -46,7 +46,7 @@ const GRID_CLASSES =
 
 const CARD_WRAPPER =
   // prevent overflow on phones; center within track
-  "w-full max-w-md sm:max-w-none mx-auto";
+  "w-full  max-w-none mx-auto";
 
 const PAPERS = [
   {
