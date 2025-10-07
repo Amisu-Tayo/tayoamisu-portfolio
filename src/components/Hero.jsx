@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section id="about" className="relative section pt-28 pb-28 md:pt-36 md:pb-40">
       <div className="grid md:grid-cols-2 gap-8 items-center">
-        <div>
+        <div className="overflow-hidden">
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
