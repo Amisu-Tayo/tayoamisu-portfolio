@@ -12,7 +12,7 @@ export default function Hero() {
             transition={{ duration: 0.4 }}
             className="text-4xl md:text-5xl font-extrabold tracking-tight font-serif"
           >
-            I’m Tayo Amisu.
+            I’m Tao Amisu.
           </motion.h1>
 
           <p className="mt-3 text-zinc-600 dark:text-zinc-300 max-w-prose">
