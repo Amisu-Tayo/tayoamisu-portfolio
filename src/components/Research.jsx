@@ -87,7 +87,10 @@ const PAPERS = [
     year: '2025',
     status: 'WIP',
     tags: ['Transformer Embeddings','Stylometry','Emotion Classification', 'Multilabel'],
-    links: { pdf: '#', overview: '#', notebook: '#' }
+    links: { 
+      pdf: '#', 
+      overview: '#', 
+      notebook: 'https://colab.research.google.com/drive/1seJo_Rmbdp6GQMEPaidbOqKv7T1fWNbP?usp=sharing' }
   },
   {
     title: 'Evaluation of Classical and Ensemble ML Algorithms for Thyroid Cancer Diagnosis',
