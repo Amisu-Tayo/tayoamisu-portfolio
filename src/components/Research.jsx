@@ -77,7 +77,7 @@ const PAPERS = [
     year: '2025',
     status: 'Paper',
     tags: ['Graph ML','Explainability','Network Analysis'],
-    links: { pdf: '/GraphClass.pdf', overview: '#', notebook: 'https://colab.research.google.com/drive/1mC8IjbfGm-5XTez96WHH37R367Or9qmx' }
+    links: { pdf: '#', overview: '#', notebook: 'https://colab.research.google.com/drive/1mC8IjbfGm-5XTez96WHH37R367Or9qmx' }
   },
   {
     title: 'Classifying Emotion, Genre, and Authorship from Lyrics',
@@ -88,7 +88,7 @@ const PAPERS = [
     status: 'WIP',
     tags: ['Transformer Embeddings','Stylometry','Emotion Classification', 'Multilabel'],
     links: { 
-      pdf: '#', 
+      pdf: '/Lyrical_Classification.pdf', 
       overview: '#', 
       notebook: 'https://colab.research.google.com/drive/1seJo_Rmbdp6GQMEPaidbOqKv7T1fWNbP?usp=sharing' }
   },
