@@ -64,8 +64,8 @@ const PROJECTS = [
     tags: ['AI','logic','Search'],
     img: wumpusImg,
     links: { 
-      repo: 'https://github.com/Amisu-Tayo/Wumpus-World-Agent',
-      Oveerview: '#' 
+      Repo: 'https://github.com/Amisu-Tayo/Wumpus-World-Agent',
+      Overview: '#' 
     }
   },
   {
