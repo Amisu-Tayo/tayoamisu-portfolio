@@ -80,7 +80,7 @@ const PAPERS = [
     links: { pdf: '#', overview: '#', notebook: 'https://colab.research.google.com/drive/1mC8IjbfGm-5XTez96WHH37R367Or9qmx' }
   },
   {
-    title: 'MMulti-Modal Stylometric Analysis of Musical Lyrics: Integrating Semantic Embeddings and Zero-Shot Emotion Classification for Artist Attribution',
+    title: 'Multi-Modal Stylometric Analysis of Musical Lyrics',
     summary:
       'Can we infer musical emotion, genre, and authorship from lyrics alone using transformer embeddings and stylometry?',
     venue: 'NLP / Representation Learning',
