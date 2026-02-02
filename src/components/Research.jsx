@@ -82,7 +82,7 @@ const PAPERS = [
   {
     title: 'Multi-Modal Stylometric Analysis of Musical Lyrics',
     summary:
-      'Can we infer musical emotion, genre, and authorship from lyrics alone using transformer embeddings and stylometry?',
+      'Can we infer musical emotion, genre, and authorship from lyrics alone using transformer embeddings and stylometry? Integrating Semantic Embeddings and Zero-Shot Emotion Classification for Artist Attribution',
     venue: 'NLP / Representation Learning',
     year: '2025',
     status: 'WIP',
