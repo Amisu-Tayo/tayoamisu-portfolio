@@ -67,7 +67,7 @@ const PAPERS = [
     year: '2025',
     status: 'WIP',
     tags: ['Transformers','Detection','Explainability','Evaluation', 'Bias'],
-    links: { pdf: '/AI-vs-AI.pdf', overview: '#', notebook: '#' }
+    links: { pdf: '/AIvsAI.pdf', overview: '#', notebook: '#' }
   },
   {
     title: 'Comparative Analysis of ML Techniques for Graph-Based Classification',
