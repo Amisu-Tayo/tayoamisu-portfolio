@@ -50,67 +50,69 @@ const CARD_WRAPPER =
 
 const PAPERS = [
   {
-    title: 'Enhancing LLM Reasoning with Dynamic Knowledge Graph Retrieval',
+    title: 'HawkSight-LLM: Structured Preference Extraction for College Recommendation',
     summary:
-      'Proposes a dynamic graph-structured retrieval framework that grounds large language models in adaptive, verifiable knowledge graphs, improving reasoning reliability and interpretability.',
+      'Evaluates whether large language models can reliably convert free-text student descriptions into structured preference vectors for grounded college recommendation, using prompt-constrained JSON extraction and hallucination-controlled explanation.',
+    venue: 'LLM Systems / Decision Support',
+    year: '2025',
+    status: 'Paper',
+    tags: ['LLMs','Prompt Engineering','Decision Support','Structured Reasoning','Evaluation'],
+    links: {
+      pdf: '/Amisu_LLM_Paper.pdf',
+      overview: 'https://ranking-with-purpose.streamlit.app/'
+    }
+  },
+  {
+    title: 'Enhancing LLM Reasoning with Dynamic Knowledge Graph Retrieval',
+    summary:'Proposes and evaluates a dynamic, query-specific knowledge graph retrieval framework that grounds large language models in explicit, verifiable facts to improve reasoning accuracy, consistency, and interpretability across high-stakes domains.',
     venue: 'Capstone / Thesis',
     year: '2026',
     status: 'WIP',
     tags: ['GraphRAG','Knowledge Graphs','LLM Reasoning','Retrieval'],
-    links: { pdf: '/GraphRAG.pdf', overview: '#', notebook: '#' }
+    links: { pdf: '#', overview: '/GraphRAG.pdf', notebook: '#' }
   },
   {
-    title: 'Evaluating the Reliability of Transformer Models for Human–AI Text Classification',
+    title: 'Comparative Analysis of Multi-Criteria Recommender Algorithms for College Selection',
     summary:
-      'Examining transformer-based classifiers and detection models for human vs. AI text, with emphasis on explainability, reliability, and bias.',
-    venue: 'Natural Language Processing',
-    year: '2025',
-    status: 'WIP',
-    tags: ['Transformers','Detection','Explainability','Evaluation', 'Bias'],
-    links: { pdf: '/AIvsAI.pdf', overview: '#', notebook: '#' }
-  },
-  {
-    title: 'Comparative Analysis of ML Techniques for Graph-Based Classification',
-    summary:
-      'Investigates how graph topology and engineered node features impact learning outcomes across classical ML models, highlighting tradeoffs between accuracy and interpretability.',
-    venue: 'Data Mining',
+      'Evaluates ranking and recommendation algorithms for college selection under multi-criteria preferences, analyzing performance, overlap, and sensitivity across simulated student profiles to highlight tradeoffs in fairness, diversity, and stability.',
+    venue: 'Recommender Systems',
     year: '2025',
     status: 'Paper',
-    tags: ['Graph ML','Explainability','Network Analysis'],
-    links: { pdf: '#', overview: '#', notebook: 'https://colab.research.google.com/drive/1mC8IjbfGm-5XTez96WHH37R367Or9qmx' }
+    tags: ['Recommender Systems','Multi-Criteria Decision Making','Ranking Algorithms','Evaluation','Fairness'],
+    links: {
+      pdf: '/Amisu_rec_paper.pdf',
+      overview: 'https://ranking-with-purpose.streamlit.app/',
+      notebook: 'https://colab.research.google.com/drive/1v7JV_x1xaC5UjQi8ua9r3eLMag6evBy4?ths=true&usp=docs_home'
+    }
   },
   {
-    title: 'Multi-Modal Stylometric Analysis of Musical Lyrics',
-    summary:
-      'Can we infer musical emotion, genre, and authorship from lyrics alone using transformer embeddings and stylometry? Integrating Semantic Embeddings and Zero-Shot Emotion Classification for Artist Attribution',
+    title: 'AI vs AI: Cross-Domain Robustness of RoBERTa-Based Human–AI Text Detection',
+    summary:'Evaluates the cross-domain robustness of a RoBERTa-based AI text detector, demonstrating significant performance degradation and model-specific bias when applied from short Q&A data to long-form academic writing.',
+    venue: 'Academic Research',
+    year: '2025',
+    status: 'Paper',
+    tags: ['AI Detection','Cross-Domain','RoBERTa', 'Evaluation', 'Bias'],
+    links: { pdf: '/AIvsAI.pdf', notebook: 'https://colab.research.google.com/drive/1dzU0E_kAFkTRAY9zFR1f-722HeGnZl_z' }
+  },
+  {
+    title: 'Stylometric and Semantic Analysis of Musical Lyrics for Artist Attribution',
+    summary:'Evaluates whether semantic embeddings and zero-shot emotion features improve artist attribution from lyrics, showing that hybrid semantic-emotional representations dramatically outperform lexical stylometry baselines.',
     venue: 'NLP / Representation Learning',
     year: '2025',
     status: 'WIP',
-    tags: ['Transformer Embeddings','Stylometry','Emotion Classification', 'Multilabel'],
+    tags: ['Music Information Retrieval','Representation Learning','Stylometry','Emotion Modeling','Transformer Embeddings'],
     links: { 
       pdf: '/Lyrical_Classification.pdf', 
-      overview: '#', 
-      notebook: 'https://colab.research.google.com/drive/1seJo_Rmbdp6GQMEPaidbOqKv7T1fWNbP?usp=sharing' }
+      notebook: 'https://colab.research.google.com/drive/1seJo_Rmbdp6GQMEPaidbOqKv7T1fWNbP' }
   },
   {
     title: 'Evaluation of Classical and Ensemble ML Algorithms for Thyroid Cancer Diagnosis',
-    summary:
-      'Benchmarks decision trees, random forests, and boosting models on medical diagnostic data, emphasizing interpretability and precision.',
+    summary: 'Compares classical and ensemble machine learning models for thyroid cancer risk prediction across two clinical datasets, demonstrating the superior performance and robustness of ensemble methods while highlighting tradeoffs with simpler, interpretable models',
     venue: 'Applied ML - Healthcare',
     year: '2025',
     status: 'Paper',
-    tags: ['Healthcare ML','Interpretability','Ensembles','Model Evaluation'],
-    links: { pdf: '/ThyroidCancerML.pdf', overview: '#', notebook: '#' }
-  },
-  {
-    title: 'Analysis of Towson University\'s Performance & Rankings',
-    summary:
-      'A pipeline-driven analysis of Towson’s performance metrics, integrating ETL, feature engineering, and visualization.',
-    venue: 'Data Analytics Competition',
-    year: '2025',
-    status: 'Finalist',
-    tags: ['Data Engineering','Analytics','Dashboards','ETL', 'Feature Engineering'],
-    links: { pdf: '/TuAnalyticsSummary.pdf', overview: '/TuAnalyticsViz.pdf', notebook: 'https://colab.research.google.com/drive/1NyYftylwOWXO_IAbDkflImh2c8cw3JIC?ths=true&usp=docs_home#scrollTo=NK3Obws66L1N' }
+    tags: ['Healthcare ML','Ensemble Methods','Model Evaluation', 'Clinical Data'],
+    links: { pdf: '/ThyroidCancerML.pdf'}
   },
 ];
 
